@@ -6,7 +6,10 @@ from datetime import datetime, timezone
 class ReminderAgent(AgentStrategy):
     
     def get_now_iso(self) -> str:
-        return datetime.now(timezone.utc).isoformat()
+        try:
+            return datetime.now().astimezone().isoformat()
+        except Exception:
+            return datetime.now(timezone.utc).isoformat()
 
     def system_prompt(self):
         now = self.get_now_iso()
@@ -14,7 +17,7 @@ class ReminderAgent(AgentStrategy):
             Eres un agente especializado en crear recordatorios.
 
             Contexto de tiempo:
-            La fecha y hora actual del sistema es: {now}
+            La fecha y hora actual del sistema es: {now} (zona local)
 
             Tu tarea:
             - Interpretar tiempos relativos como "en 15 minutos", "mañana a las 3pm",
