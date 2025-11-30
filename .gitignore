@@ -1,0 +1,69 @@
+# =======================================
+#  Python / FastAPI Backend Gitignore
+# =======================================
+
+# ---- Entorno virtual ----
+venv/
+env/
+.venv/
+
+# ---- Archivos sensibles ----
+.env
+.env.local
+*.pem
+*.key
+
+# ---- Compilados de Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ---- Archivos de build ----
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ---- Archivos de logs ----
+*.log
+
+# ---- Configuración IDE ----
+.vscode/
+.idea/
+*.iml
+
+# ---- Bytecode ----
+*.pyo
+*.pyd
+
+# ---- Archivos de cache ----
+.cache/
+pytest_cache/
+.cache/
+.mypy_cache/
+
+# ---- Coverage ----
+.coverage
+coverage.xml
+htmlcov/
+
+# ---- MacOS basura ----
+.DS_Store
+
+# ---- Windows basura ----
+Thumbs.db
+
+# ---- Editor configs ----
+*.swp
+*.swo
+
+# ---- Docker ----
+*.dockerfile
+docker-compose.override.yml
+
+# ---- Railway ----
+railway.toml
+
+# ---- Otros ----
+*.db
+*.sqlite3
